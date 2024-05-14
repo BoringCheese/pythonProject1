@@ -124,10 +124,11 @@ def log_gabor1(img):
     n_temp_g1 = (eo_g[0] + eo_g[5] + eo_g[10] + eo_g[15]) / 4
     a1 = np.dstack((n_temp_r1, n_temp_g1, n_temp_b1))
     a1 = a1.astype(int)
+    a1 = a1.clip(0, 255)
     # a1 = a1*100
     # a1 = np.transpose(a1, (0, 1, 2))
-
-    a1 = a1.astype(np.float32)
+    a1 = a1.astype(np.int8)
+    # a1 = a1.astype(np.float32)
     # print("111")
     return a1
 
